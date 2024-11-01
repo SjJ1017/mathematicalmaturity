@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed 4x3 Grid with Flexible Block Size</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+            grid-template-rows: repeat(3, auto);   /* Fixed 3 rows */
+            gap: 15px;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .row-1 .block { background-color: #ae1c28; color: white; }
+        .row-2 .block { background-color: #ffffff; color: black; border: 1px solid #ddd; }
+        .row-3 .block { background-color: #21468b; color: white; }
+        .block {
+            padding: 40px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        .block:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr; /* 1 column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Row 1: Red blocks -->
+    <div class="row-1 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/241865#" class="block">Linear Algebra I-B</a></div>
+    <div class="row-1 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/233954#" class="block">Linear Algebra II-B</a></div>
+    <div class="row-1 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/241836#" class="block">Calculus I-B</a></div>
+    <div class="row-1 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/233938#" class="block">Calculus II-B</a></div>
+
+    <!-- Row 2: White blocks -->
+    <div class="row-2 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/242125#" class="block">Mathematics Foundation in Artificial Intelligence</a></div>
+    <div class="row-2 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/242126#" class="block">Theoretical Computer Science</a></div>
+    <div class="row-2 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/234278#" class="block">Principles of Artificial Intelligence</a></div>
+    <div class="row-2 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/244771#" class="block">Information theory</a></div>
+
+    <!-- Row 3: Blue blocks -->
+    <div class="row-3 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/241562#" class="block">Electromagnetics</a></div>
+    <div class="row-3 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/241628#" class="block">Signal and Systems</a></div>
+    <div class="row-3 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/242158#" class="block">Probability and Statistics</a></div>
+    <div class="row-3 block"><a href="https://jwba.ucas.ac.cn/sc/course/courseplan/241626#" class="block">Discrete Mathematics</a></div>
+</div>
+
+</body>
+</html>
